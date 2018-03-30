@@ -3,6 +3,6 @@ svg, input {
   display: block;
 }
 
-.bin-count {
-	text-align: center;
+.arc {
+  stroke: black;
 }
