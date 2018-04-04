@@ -66,16 +66,20 @@ function ticked() {
     .attr("y2", d => d.target.y)
 }
 
-function dragStart() {
-  console.log("start drag")
-
+function dragStart(d){
+  simulation.alphaTarget(0.5).restart();
+  d.fx = d.x
+  d.fy = d.y
 }
 
-function drag(){
-
+function drag(d){
+  
+ d.fx = d3.event.x
+ d.fy = d3.event.y
 }
 
-
-function dragEnd(){
-
+function dragEnd(d){
+  simulation.alphaTarget(0).restart();
+  d.fx = null;
+  d.fy = null;
 }
